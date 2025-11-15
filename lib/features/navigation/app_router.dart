@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice9/features/car_expenses/screens/add_expense_screen.dart';
 import 'package:flutter_practice9/features/car_expenses/screens/car_expenses_screen.dart';
-import 'package:flutter_practice9/features/car_expenses/state/car_expenses_container.dart';
 import 'package:flutter_practice9/features/service_history/screens/add_service_record_screen.dart';
 import 'package:flutter_practice9/features/service_history/screens/service_history_screen.dart';
 import 'package:flutter_practice9/features/vehicle_info/screens/vehicle_info_screen.dart';
@@ -10,24 +9,17 @@ import 'package:go_router/go_router.dart';
 final router = GoRouter(
   initialLocation: '/expenses',
   routes: <RouteBase>[
-    ShellRoute(
-      builder: (BuildContext context, GoRouterState state, Widget child) {
-        return CarExpensesContainer(child: child);
+    GoRoute(
+      path: '/expenses',
+      builder: (BuildContext context, GoRouterState state) {
+        return const CarExpensesScreen();
       },
       routes: <RouteBase>[
         GoRoute(
-          path: '/expenses',
+          path: 'add',
           builder: (BuildContext context, GoRouterState state) {
-            return const CarExpensesScreen();
+            return const AddExpenseScreen();
           },
-          routes: <RouteBase>[
-            GoRoute(
-              path: 'add',
-              builder: (BuildContext context, GoRouterState state) {
-                return const AddExpenseScreen();
-              },
-            ),
-          ],
         ),
       ],
     ),
