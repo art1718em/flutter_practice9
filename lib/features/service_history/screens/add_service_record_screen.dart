@@ -57,12 +57,12 @@ class _AddServiceRecordScreenState extends State<AddServiceRecordScreen> {
               TextFormField(
                 controller: _titleController,
                 decoration: const InputDecoration(
-                  labelText: 'Service Title',
+                  labelText: 'Название',
                   border: OutlineInputBorder(),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter a service title';
+                    return 'Пожалуйста введите название';
                   }
                   return null;
                 },
@@ -71,13 +71,13 @@ class _AddServiceRecordScreenState extends State<AddServiceRecordScreen> {
               TextFormField(
                 controller: _costController,
                 decoration: const InputDecoration(
-                  labelText: 'Cost',
+                  labelText: 'Стоимость',
                   border: OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter a cost';
+                    return 'Пожалуйста введите стоимость';
                   }
                   return null;
                 },
@@ -86,7 +86,7 @@ class _AddServiceRecordScreenState extends State<AddServiceRecordScreen> {
               Center(
                 child: ElevatedButton(
                   onPressed: _saveForm,
-                  child: const Text('Save Service Record'),
+                  child: const Text('Сохранить'),
                 ),
               ),
             ],
